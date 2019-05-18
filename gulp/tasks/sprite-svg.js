@@ -3,6 +3,7 @@ import plumber from 'gulp-plumber';
 import svgmin from 'gulp-svgmin';
 import svgStore from 'gulp-svgstore';
 import rename from 'gulp-rename';
+import replace from 'gulp-replace';
 import cheerio from 'cheerio';
 import gulpcheerio from 'gulp-cheerio';
 import through2 from 'through2';
@@ -19,8 +20,8 @@ gulp.task('sprite:svg', () => gulp
         $('[stroke]').removeAttr('stroke');
         let w,h,size;
         if($('svg').attr('height')){
-            w = $('svg').attr('width').replace(/\D/g,'');
-            h = $('svg').attr('height').replace(/\D/g,'');
+            w = $('svg').attr('width').replace(/(?!-)[^0-9.]/g,'');
+            h = $('svg').attr('height').replace(/(?!-)[^0-9.]/g,'');
         } else {
             size = $('svg').attr('viewbox').split(' ').splice(2);
             w = size[0];
@@ -50,7 +51,7 @@ gulp.task('sprite:svg', () => gulp
           mergePaths: false
       }]
   }))
-  .pipe(rename({ prefix: 'icon-' }))
+  .pipe(rename({ prefix: 'svg-' }))
   .pipe(svgStore({ inlineSvg: false }))
   .pipe(through2.obj(function (file, encoding, cb) {
       let $ = cheerio.load(file.contents.toString(), {xmlMode: true});
@@ -78,8 +79,12 @@ gulp.task('sprite:svg', () => gulp
 		;
     cb();
   }))
-  
+
   .pipe(rename({ basename: 'sprite' }))
+  .pipe(replace(
+    '<svg ',
+    '<svg style="display: none;" '
+    ))
   .pipe(gulp.dest(config.dest.img))
 );
 

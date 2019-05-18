@@ -1,3 +1,3 @@
-import sayHello from './lib/sayHello';
+import getSVGSprite from './functions/getSVGSprite';
 
-sayHello();
+getSVGSprite()

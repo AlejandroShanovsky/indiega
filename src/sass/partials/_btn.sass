@@ -1,0 +1,32 @@
+.btn
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 0 15px
+	border-radius: 10px
+	overflow: hidden
+	position: relative
+	background-color: transparent
+	text-align: center
+	color: white
+	font-family: $fr
+	font-size: 14px
+	font-weight: 700
+	line-height: 60px
+	text-transform: uppercase
+	text-decoration: none
+	+tr
+	+h
+		cursor: pointer
+		background-color: #3dd0d8
+		&:after
+			opacity: 0
+	&:after
+		content: ""
+		+coverdiv
+		background-image: $gradient
+		opacity: 1
+		z-index: 0
+		+tr
+	span
+		z-index: 1
