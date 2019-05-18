@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
+import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
@@ -41,6 +42,7 @@ const processors = [
 gulp.task('sass', () => gulp
   .src(config.src.sass + '/*.{sass,scss}')
   .pipe(sourcemaps.init())
+  .pipe(sassGlob())
   .pipe(sass({
       outputStyle: config.production ? 'compact' : 'expanded', // nested, expanded, compact, compressed
       precision: 5
