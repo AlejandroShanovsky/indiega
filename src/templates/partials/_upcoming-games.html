@@ -1,0 +1,98 @@
+<section class="block">
+	<div class="block__container">
+		<div class="block__head">
+			<div class="block__title" data-backword="COMING SOON">UpComing Games:</div>
+			<div class="block__subtitle">Pork chop pastrami meatball, picanha salami capicola drumstick tri-tip flank short loin strip steak prosciutto leberkas jowl fatback. Alcatra kielbasa sausage, turkey short ribs shank bresaola meatball jowl ball tip buffalo.</div>
+		</div>
+		<div class="block__content">
+
+
+			<div class="upcoming-games">
+				<div class="upcoming-games__top">
+					<div class="upcoming-games__top-slider">
+
+						{% for page in range(0, 3) %}
+						<div class="upcoming-games__top-item">
+
+							<div class="card-simple">
+								<div class="card-simple__img-container">
+									<img src="" alt="" class="card-simple__img" />
+								</div>
+								<div class="card-simple__title">GOD OF WAR</div>
+								<div class="card-simple__subtitle">mar 18-20, 2018</div>
+							</div>
+
+						</div>
+						{% endfor %}
+
+						<div class="upcoming-games__top-item">
+
+							<div class="card-simple active">
+								<div class="card-simple__img-container">
+									<img src="" alt="" class="card-simple__img" />
+								</div>
+								<div class="card-simple__title">GOD OF WAR</div>
+								<div class="card-simple__subtitle">mar 18-20, 2018</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="upcoming-games__bottom">
+					<div class="upcoming-games__bottom-slider">
+
+						{% for page in range(0, 1) %}
+						<div class="upcoming-games__bottom-item">
+
+							<div class="card-full">
+								<div class="card-full__row">
+
+									<div class="card-full__col">
+
+										<div class="card-full__box">
+											<div class="card-full__tag">
+												<a href="#" class="card-full__tag-item">NEW</a>
+												<a href="#" class="card-full__tag-item">GAMES</a>
+												<a href="#" class="card-full__tag-item">ACTION</a>
+											</div>
+											<div class="card-full__date">mar 18-20, 2018</div>
+										</div>
+
+										<div class="card-full__title">GOD OF WAR</div>
+
+										<div class="card-full__content">
+											<p>Andouille frankfurter hamburger, swine leberkas tenderloin cupim. Ground round ball tip pastrami, turducken chicken porchetta fatback frankfurter. Pig kielbasa jowl strip. </p>
+
+											<p>Steak sausage pork loin bacon tri-tip meatball shoulder cupim beef pork chop kevin boudin. Short loin pig meatball ham landjaeger pastrami. Drumstick ham hock chuck pork belly chicken prosciutto biltong salami ham pancetta.</p>
+										</div>
+
+										<div class="card-full__box">
+											<div class="btn">Read more</div>
+											<div class="rating">
+												{% for page in range(0, 5) %}
+												<div class="rating__item"></div>
+												{% endfor %}
+											</div>
+										</div>
+
+									</div>
+
+									<div class="card-full__col">
+										<img src="" alt="" class="card-full__img" />
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

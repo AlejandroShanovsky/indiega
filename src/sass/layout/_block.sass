@@ -1,0 +1,57 @@
+.block
+	width: 100%
+	background-color: #1E1D32
+	padding: 115px 0 50px 0
+	&__container
+		width: 100%
+		max-width: 1200px
+		padding: 0 15px
+		margin: 0 auto
+		display: flex
+		flex-direction: column
+		align-items: center
+
+	&__head
+		width: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-bottom: 85px
+
+	&__title
+		text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3)
+		color: white
+		font-family: $fa
+		font-size: 40px
+		font-weight: 700
+		line-height: 34px
+		text-transform: uppercase
+		text-align: center
+		position: relative
+		white-space: nowrap
+		&:after
+			content: attr(data-backword)
+			+vcenter
+			opacity: 0.1
+			text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3)
+			color: #c2d4f8
+			font-family: $fa
+			font-size: 88px
+			font-weight: 700
+			line-height: 88px
+			text-transform: uppercase
+			text-align: center
+			white-space: nowrap
+			pointer-events: none
+
+	&__subtitle
+		margin-top: 40px
+		color: #c2d4f8
+		font-family: Roboto
+		font-size: 16px
+		font-weight: 300
+		line-height: 26px
+		text-align: center
+
+	&__content
+
