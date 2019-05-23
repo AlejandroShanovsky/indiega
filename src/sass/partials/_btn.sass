@@ -3,6 +3,7 @@
 	align-items: center
 	justify-content: center
 	padding: 0 15px
+	min-width: 220px
 	border-radius: 10px
 	overflow: hidden
 	position: relative
@@ -18,15 +19,24 @@
 	+tr
 	+h
 		cursor: pointer
-		background-color: #3dd0d8
-		&:after
+		background-color: $accent
+		&:before
 			opacity: 0
-	&:after
+	&:before
 		content: ""
 		+coverdiv
 		background-image: $gradient
 		opacity: 1
 		z-index: 0
 		+tr
+
+	&--transparent
+		box-shadow: inset 0 0 0 2px #FFF
+		+h
+			box-shadow: inset 0 0 0 2px $accent
+
+		&:before
+			content: none
+
 	span
 		z-index: 1

@@ -1,0 +1,39 @@
+<section class="block">
+	<div class="block__container">
+
+		<div class="block__head">
+			<div class="block__title" data-backword="all Reviews">Our latest Posts:</div>
+		</div>
+
+		<div class="block__content">
+
+			<div class="block__list block__list--2items">
+
+				{% for page in range(0, 2) %}
+				<div class="block__list-item">
+
+					<div class="card-review">
+
+						<div class="card-review__img-container">
+							<img src="" alt="" class="card-review__img" />
+						</div>
+
+						<div class="card-review__content">
+
+							<div class="card-review__title">Birdie Stephens</div>
+
+							<div href="#" class="card-review__tag">gamer </div>
+
+							<p class="card-review__text">«Fatback landjaeger prosciutto jerky ham. Salami cappig cupim leberkas. Kevin tenderloin ground round. Spare ribs pork belly cupim.»</p>
+						</div>
+
+					</div>
+
+				</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+	</div>
+</section>

@@ -1,0 +1,43 @@
+.gallery
+	display: flex
+	flex-direction: column
+
+	&__top
+		width: 100%
+		margin-bottom: 55px
+
+	&__top-slider
+		display: flex
+		justify-content: center
+		margin: 0 -30px
+
+
+	&__top-slider-item
+		padding: 0 30px
+		color: #FFF
+		font-family: $fr
+		font-size: 14px
+		font-weight: 700
+		line-height: 25px
+		text-transform: uppercase
+		+tr
+		+h
+			color: $accent
+			cursor: pointer
+		&.active
+			color: $accent
+
+	&__bottom
+		width: 100%
+
+	&__bottom-slider
+		display: flex
+		margin: 0 -20px
+
+	&__bottom-slider-item
+		width: 100%
+		padding: 0 20px
+
+
+
+

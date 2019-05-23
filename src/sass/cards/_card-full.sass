@@ -1,19 +1,88 @@
 .card-full
+	width: 100%
+	padding: 90px 100px
+	border-radius: 10px
+	background-color: #292845
 
 	&__row
+		display: flex
+		align-items: stretch
+		margin: 0 -45px
 
 	&__col
+		padding: 0 45px
+		display: flex
+		flex-direction: column
+		width: 100%
+		max-width: 50%
+		position: relative
+		&:nth-child(1)
+			max-width: 560px
+			flex-grow: 1
+		&:nth-child(2)
 
 	&__box
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
 
 	&__tag
+		display: flex
 
 	&__tag-item
+		color: $accent
+		font-family: $fr
+		font-size: 14px
+		font-weight: 700
+		line-height: 14px
+		text-transform: uppercase
+		margin-right: 24px
+		text-decoration: none
+		&:last-child
+			margin-right: 0
 
 	&__date
+		color: #c2d4f8
+		font-family: $fr
+		font-size: 14px
+		font-weight: 700
+		line-height: 14px
+		text-transform: uppercase
 
 	&__title
+		margin-top: 15px
+		text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3)
+		color: white
+		font-family: $fa
+		font-size: 32px
+		font-weight: 700
+		line-height: 30px
+		text-transform: uppercase
 
 	&__content
+		margin: 45px 0 60px
+		p
+			color: #c2d4f8
+			font-family: $fr
+			font-size: 16px
+			font-weight: 300
+			line-height: 26px
+			margin-bottom: 30px
+			&:last-child
+				margin-bottom: 0
+
+	&__img-container
+		position: absolute
+		left: 45px
+		top: -20px
+		bottom: -20px
+		right: -100px
+		background-color: #a1abbe
+		border-radius: 10px
+		box-shadow: -5.4px 8.4px 29px rgba(24, 23, 40, 0.2)
+		overflow: hidden
 
 	&__img
+		+coverdiv
+		+coverimg

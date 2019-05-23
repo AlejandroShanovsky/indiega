@@ -1,0 +1,51 @@
+<section class="block">
+	<div class="block__container">
+		<div class="block__head">
+			<div class="block__title" data-backword="Frash news">Our latest Posts:</div>
+			<div class="block__subtitle">Pork chop pastrami meatball, picanha salami capicola drumstick tri-tip flank short loin strip steak prosciutto leberkas jowl fatback.</div>
+		</div>
+		<div class="block__content">
+
+			<div class="block__list">
+
+				{% for page in range(1, 4) %}
+				<div class="block__list-item">
+
+					<div class="card-post card-post--{{page}}">
+
+						<div class="card-post__img-container">
+							<img src="" alt="" class="card-post__img" />
+						</div>
+
+						<div class="card-post__content">
+							<div class="card-post__box">
+								<a href="#" class="card-post__tag">PS4</a>
+								<div class="card-post__date">MAR 14, 2018</div>
+							</div>
+
+							<div class="card-post__title">COW BILTONG PORK BELLY KIELBASA SHANKLE</div>
+
+							<p class="card-post__text">Turducken cupim hamburger beef ribs picanha, drumstick buffalo tri-tip cow. Turducken prosciutto shank pork chop.</p>
+						</div>
+
+						<div class="card-post__bottom">
+							<div class="card-post__bottom-item">
+								<div class="card-post__bottom-item-icon"></div>
+								<div class="card-post__bottom-item-title">by Admin</div>
+							</div>
+							<div class="card-post__bottom-item">
+								<div class="card-post__bottom-item-icon"></div>
+								<div class="card-post__bottom-item-title">126</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+	</div>
+</section>
