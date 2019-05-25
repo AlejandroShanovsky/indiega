@@ -8,9 +8,12 @@
 
 			<div class="upcoming-games">
 				<div class="upcoming-games__top">
-					<div class="upcoming-games__top-slider">
 
-						{% for page in range(0, 3) %}
+					<div class="slider-arrow slider-arrow--prev js-slider-control-prev"></div>
+
+					<div class="upcoming-games__top-slider js-slider-upcoming-games">
+
+						{% for page in range(0, 5) %}
 						<div class="upcoming-games__top-item">
 
 							<div class="card-simple">
@@ -24,25 +27,16 @@
 						</div>
 						{% endfor %}
 
-						<div class="upcoming-games__top-item">
-
-							<div class="card-simple active">
-								<div class="card-simple__img-container">
-									<img src="" alt="" class="card-simple__img" />
-								</div>
-								<div class="card-simple__title">GOD OF WAR</div>
-								<div class="card-simple__subtitle">mar 18-20, 2018</div>
-							</div>
-
-						</div>
-
 					</div>
+
+					<div class="slider-arrow slider-arrow--next js-slider-control-next"></div>
+
 				</div>
 
 				<div class="upcoming-games__bottom">
-					<div class="upcoming-games__bottom-slider">
+					<div class="upcoming-games__bottom-slider js-slider-upcoming-games-for">
 
-						{% for page in range(0, 1) %}
+						{% for page in range(0, 5) %}
 						<div class="upcoming-games__bottom-item">
 
 							<div class="card-full">
@@ -71,7 +65,7 @@
 											<a href="" class="btn"><span>Read more</span></a>
 											<div class="rating">
 												{% for page in range(0, 5) %}
-												<div class="rating__item"></div>
+												<div class="rating__item">{{mixins.icon('star')}}</div>
 												{% endfor %}
 											</div>
 										</div>

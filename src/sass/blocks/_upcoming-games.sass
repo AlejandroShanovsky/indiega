@@ -5,6 +5,7 @@
 	&__top
 		width: 100%
 		margin-bottom: 85px
+		position: relative
 
 	&__top-slider
 		display: flex
@@ -13,20 +14,24 @@
 		margin: 0 -60px
 
 	&__top-item
-		width: 100%
-		max-width: 25%
-		flex: 25%
-		display: flex
+		// width: 100%
+		// max-width: 25%
+		// flex: 25%
+		display: flex !important
 		justify-content: center
 		padding: 0 60px
+		&.slick-current
+			.card-simple
+				@extend .card-simple.active
 
 	&__bottom
 		width: 100%
+		position: relative
 
 	&__bottom-slider
 		display: flex
-		margin: 0 -40px
+		margin: 0 -60px
 
 	&__bottom-item
 		width: 100%
-		padding: 0 40px
+		padding: 0 60px

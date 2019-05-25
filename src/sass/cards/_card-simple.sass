@@ -17,9 +17,11 @@
 		border-radius: 50%
 		overflow: hidden
 		position: relative
+		+tr
 		&:after
 			content: ""
 			+coverdiv
+			background-color: rgba($accent, 0.5)
 			background-image: $gradient
 			opacity: 0
 			+tr

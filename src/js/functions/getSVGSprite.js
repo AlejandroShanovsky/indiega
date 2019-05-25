@@ -4,4 +4,3 @@ function getSVGSprite (){
 	},'html');
 }
 
-module.exports = getSVGSprite;

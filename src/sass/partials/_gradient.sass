@@ -1,0 +1,14 @@
+.gradient
+	background-color: $accent
+	+tr
+	+h
+		cursor: pointer
+		&:before
+			opacity: 0
+	&:before
+		content: ""
+		+coverdiv
+		background-image: $gradient
+		opacity: 1
+		z-index: 0
+		+tr

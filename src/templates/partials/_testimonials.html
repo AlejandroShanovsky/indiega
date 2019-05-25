@@ -7,9 +7,10 @@
 
 		<div class="block__content">
 
-			<div class="block__list block__list--2items">
+			<div class="slider-arrow slider-arrow--prev js-slider-control-prev"></div>
 
-				{% for page in range(0, 2) %}
+			<div class="block__slider js-slider-reviews">
+				{% for page in range(0, 6) %}
 				<div class="block__list-item">
 
 					<div class="card-review">
@@ -31,9 +32,10 @@
 
 				</div>
 				{% endfor %}
-
 			</div>
 
+			<div class="slider-arrow slider-arrow--next js-slider-control-next"></div>
+			<div class="slider-dots js-slider-dots"></div>
+
 		</div>
-	</div>
-</section>
+	</section>
