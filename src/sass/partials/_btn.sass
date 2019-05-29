@@ -41,5 +41,27 @@
 		&:before
 			content: none
 
+	&--bordered-gradient
+		overflow: visible
+		background-color: #1e1d32
+		border-radius: 10px
+		+h
+			background-color: $accent
+			color: #fff
+			box-shadow: 0 0 0 2px $accent
+			&:before
+				opacity: 0
+
+		&:before
+			border-radius: 12px
+			width: auto
+			height: auto
+			background-image: $gradientNoTrnsprnt
+			top: -2px
+			left: -2px
+			right: -2px
+			bottom: -2px
+			z-index: -1
+
 	span
 		z-index: 1

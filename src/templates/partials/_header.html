@@ -1,1 +1,18 @@
-<!-- header -->
+<header class="header js-header">
+	<div class="header__container">
+
+		<div class="header__logo">
+			{% include "./_logo.html" %}
+		</div>
+
+		<nav class="header__navigation">
+			{% include "./_navigation.html" %}
+		</nav>
+
+		<div class="header__box">
+			<div class="search">{{mixins.icon('search')}}</div>
+			<a href="#" class="header__action btn btn--bordered-gradient"><span>Join us Now</span></a>
+		</div>
+
+	</div>
+</header>

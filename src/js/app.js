@@ -5,10 +5,40 @@
 //=include functions/sliderReviews.js
 
 getSVGSprite()
-btnToTop($('.btnTO'),'5000')
+navigation()
 sliderUpcomingGames()
 sliderHero()
 sliderReviews()
 
+btnToTop($('.btnTO'),'5000')
 
+function navigation(){
+	let element = $('.js-header');
+	let fixedTrigger = $('.js-nav-trigger');
 
+	if (fixedTrigger.length) {
+		var scroll = $(window).scrollTop();
+		var objectPosition = fixedTrigger.offset().top;
+		if (scroll > objectPosition) {
+			element.addClass("fixed");
+		} else {
+			element.removeClass("fixed");
+		}
+	}
+
+	$(window).scroll(function() {
+		var scroll = $(window).scrollTop();
+		if (scroll > objectPosition) {
+			element.addClass("fixed");
+		} else {
+			element.removeClass("fixed");
+		}
+	});
+
+}
+
+$('.hamburger').on('click', function(e) {
+	e.preventDefault();
+	$('.hamburger').toggleClass('active');
+	$('.js-nav-mobile').toggleClass('active');
+});
