@@ -1,0 +1,15 @@
+{% import "data/nav.html" as nav %}
+
+<ul class="navigation">
+
+	{% for item in nav.nav %}
+
+	<li class="navigation__item {% if title == item.title %}current{% endif %}">
+
+		<a href="{{ item.link }}.html" class="navigation__link">{% if title == item.title %}{{ title }}{% else %}{{ item.title }}{% endif %}</a>
+
+	</li>
+
+	{% endfor %}
+
+</ul>

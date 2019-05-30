@@ -1,29 +1,43 @@
+{% import "data/mainHero.html" as items %}
+
 <div class="hero">
 	<div class="hero__container">
 
 		<div class="hero__slider js-slider-hero">
 
-			{% for page in range(0, 3) %}
+			{% for item in items.mainHero %}
 
 			<div class="hero__item">
-				<img src="" alt="" class="hero__bg" />
-				<div class="hero__title">Welcome to Gamesplay </div>
-				<div class="hero__title hero__title--big">Online gaming site</div>
-				<div class="hero__subtitle">Pork chop pastrami meatball, picanha salami capicola drumstick tri-tip flank short loin strip steak prosciutto</div>
-				<a href="/about-us.html" class="hero__action btn"><span>more About us</span></a>
+
+				{% if item.bg|length %}
+				<div class="hero__bg-container">
+					<img src="{{ item.bg }}" alt="" class="hero__bg" />
+				</div>
+				{% endif %}
+
+				{% if item.title|length %}
+				<div class="hero__title">{{ item.title }}</div>
+				{% endif %}
+
+				{% if item.titleBig|length %}
+				<div class="hero__title hero__title--big">{{ item.titleBig }}</div>
+				{% endif %}
+
+				{% if item.subtitle|length %}
+				<div class="hero__subtitle">{{ item.subtitle }}</div>
+				{% endif %}
+
+				{% if item.link|length %}
+				<a href="{{ item.link }}" class="hero__action btn"><span>{{ item.linkName }}</span></a>
+				{% endif %}
+
 			</div>
 
 			{% endfor %}
 
 		</div>
 
-		<div class="hero-slider-controls js-slider-hero-for">
-			{% for page in range(0, 3) %}
-			<div class="hero-slider-controls__item-container">
-				<div class="hero-slider-controls__item">0{{page}}</div>
-			</div>
-			{% endfor %}
-		</div>
+		<div class="hero__slider-dots js-slider-hero-dots"></div>
 
 		<div class="hero-socials">
 			<a href="#" class="hero-socials__item">{{mixins.icon('facebook')}}</a>
@@ -33,3 +47,4 @@
 
 	</div>
 </div>
+

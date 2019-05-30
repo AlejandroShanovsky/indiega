@@ -7,10 +7,16 @@
 	padding: 25px 15px
 	box-shadow: 3.5px 6.1px 30px rgba(0, 0, 0, 0.57)
 	background-color: #1e1d32
-	transition: none !important
+	+tr
+	&.notVisible
+		transform: translateY(-200%)
+		padding: 15px 15px
+		+tr
 	&.fixed
+		transform: translateY(0)
 		position: fixed
 		padding: 15px 15px
+		+tr
 		.logo
 			height: 50px
 		.btn
@@ -23,10 +29,24 @@
 		align-items: center
 		justify-content: space-between
 
+
 	&__logo
 		display: flex
+		+r(370)
+			max-height: 50px
+
+
+	&__block
+		width: 100%
+		display: flex
+		align-items: center
+		+r(1200)
+			display: none
 
 	&__navigation
+		width: 100%
+		display: flex
+		justify-content: center
 
 	&__box
 		display: flex
@@ -34,7 +54,5 @@
 
 	&__action
 		margin-left: 25px
-
-
 
 

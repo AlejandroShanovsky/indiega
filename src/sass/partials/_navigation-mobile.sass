@@ -1,0 +1,35 @@
+.navigation-mobile
+	transform: translateY(-400%)
+	position: fixed
+	padding: 15px 15px 40px 15px
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	z-index: 9999
+	display: flex
+	flex-direction: column
+	align-items: center
+	background-color: $bg
+	+tr
+	&.active
+		transform: translateY(0)
+
+	&__block
+		height: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: space-between
+
+	&__navigation
+
+	&__action
+	.logo
+		&__box
+			display: none
+
+	.hamburger
+		position: absolute
+		right: 20px
+		top: 20px

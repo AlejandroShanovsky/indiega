@@ -1,0 +1,78 @@
+.card-price
+	width: 100%
+	border-radius: 10px
+	overflow: hidden
+	display: flex
+	flex-direction: column
+	align-items: center
+	background-color: #292845
+	padding-bottom: 60px
+
+	&--2
+		.card-price__price
+			background-color: #5c9ddd
+
+	&--3
+		.card-price__price
+			background-color: #7c69e3
+
+	&__title
+		width: 100%
+		padding: 30px 15px
+		color: white
+		font-family: $fa
+		font-size: 24px
+		font-weight: 700
+		line-height: 18px
+		text-align: center
+		text-transform: uppercase
+
+	&__price
+		width: 100%
+		padding: 20px
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		background-color: $accent
+
+	&__price-number
+		font-size: 24px
+		color: #fff
+		font-family: "Agency FB"
+		font-weight: 700
+		line-height: 24px
+		text-transform: uppercase
+		span
+			font-size: 48px
+			line-height: 48px
+
+	&__price-text
+		color: #fff
+		font-family: Roboto
+		font-size: 14px
+		font-weight: 700
+		line-height: 14px
+		text-transform: uppercase
+
+	&__list
+		width: 100%
+		display: flex
+		flex-direction: column
+		padding: 30px 50px
+
+	&__list-item
+		padding: 25px 0
+		border-bottom: 1px solid rgba(#c2d4f8, 0.2)
+		color: #c2d4f8
+		font-family: Roboto
+		font-size: 16px
+		font-weight: 300
+		line-height: 20px
+		text-align: center
+		&:last-child
+			margin-bottom: 0
+			border-bottom: none
+
+	&__action
+

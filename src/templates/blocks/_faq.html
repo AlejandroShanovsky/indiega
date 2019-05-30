@@ -1,0 +1,41 @@
+{% import "data/faq.html" as items %}
+
+<section class="block block--p180">
+	<div class="block__container">
+		<div class="block__head">
+			<div class="block__title" data-backword="you should know this">Frequently Asked Questions</div>
+			<div class="block__subtitle">Corned beef ham frankfurter cow, strip steak shoulder doner flank. Pork chop spare ribs pork ball tip. Prosciutto jowl meatball shankю</div>
+		</div>
+		<div class="block__content">
+
+			<div class="faq">
+
+				{% for i in items.faq %}
+				<div class="faq__item">
+
+					<div class="faq__item-block">
+
+						{% if i.title|length %}
+						<div class="faq__item-title">{{ item.title }}</div>
+						{% endif %}
+
+						{% if i.subtitle|length %}
+						<div class="faq__item-subtitle">
+							{% for j in i.subtitle %}
+							<p>{{ j.subtitleiItem }}</p>
+							{% endfor %}
+						</div>
+						{% endif %}
+					</div>
+
+					<div class="faq__item-counter">0{{ loop.index }}</div>
+
+				</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+	</div>
+</section>
+

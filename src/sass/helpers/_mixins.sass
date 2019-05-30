@@ -325,3 +325,10 @@
     transform: translate(15.5555555%, -15.5555555%) rotate(72deg) translateY(50%)
   &:after
     transform: translate(-15.5555555%, -15.5555555%) rotate(-72deg) translateY(50%)
+
+
+@mixin darken($color, $transparency: 0.75)
+  &:before
+    content: ""
+    +coverdiv
+    background-color: rgba($color, $transparency)

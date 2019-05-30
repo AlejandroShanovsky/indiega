@@ -9,6 +9,10 @@
 	align-items: center
 	flex-direction: column
 	justify-content: center
+	+r(1000)
+		left: 15px
+	+r(375)
+		left: 5px
 
 	&__item-container
 		&.slick-current
@@ -38,6 +42,11 @@
 		text-transform: uppercase
 		transform: scale(1) rotate(90deg)
 		opacity: 0.8
+		+r(375)
+			font-size: 18px
+			height: 30px
+			width: 30px
+
 		+tr
 		+h
 			cursor: pointer

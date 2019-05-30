@@ -23,9 +23,10 @@ function sliderReviews() {
 			nextArrow: thisSlider.parent().find('.js-slider-control-next'),
 			responsive: [
 			{
-				breakpoint: 481,
+				breakpoint: 769,
 				settings: {
 					slidesToShow: 1,
+					slidesToScroll: 1,
 				}
 			}
 			]

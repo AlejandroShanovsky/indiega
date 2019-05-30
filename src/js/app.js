@@ -6,9 +6,13 @@
 
 getSVGSprite()
 navigation()
+
+$(document).ready(function() {
 sliderUpcomingGames()
 sliderHero()
 sliderReviews()
+$(window).trigger('resize');
+});
 
 btnToTop($('.btnTO'),'5000')
 
@@ -19,6 +23,8 @@ function navigation(){
 	if (fixedTrigger.length) {
 		var scroll = $(window).scrollTop();
 		var objectPosition = fixedTrigger.offset().top;
+		var elementHeight = element.height();
+		console.log(elementHeight);
 		if (scroll > objectPosition) {
 			element.addClass("fixed");
 		} else {

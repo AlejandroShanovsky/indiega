@@ -2,6 +2,11 @@
 	width: 100%
 	background-color: #1E1D32
 	padding: 115px 0 50px 0
+	overflow: hidden
+	&--p180
+		padding: 180px 0 180px 0
+	&--bg-dark
+		background-color: #181728
 
 	&__container
 		width: 100%
@@ -14,9 +19,10 @@
 
 	&__list
 		display: flex
-		flex-wrap: nowrap
+		flex-wrap: wrap
 		overflow: hidden
 		margin: 0 -15px
+
 		&--2items
 			.block__list-item
 				max-width: 50%
@@ -24,9 +30,15 @@
 
 	&__list-item
 		padding: 0 15px
+		width: 100%
 		max-width: calc(100% / 3)
 		flex: calc(100% / 3)
-
+		+r(1200)
+			max-width: 100%
+			flex: 100%
+			margin-bottom: 30px
+			&:last-child
+				margin-bottom: 0
 
 	&__head
 		width: 100%
@@ -60,6 +72,15 @@
 			text-align: center
 			white-space: nowrap
 			pointer-events: none
+			+r(600)
+				font-size: vw(600, 88px)
+				line-height: vw(600, 88px)
+			+r(480)
+				font-size: vw(480, 78px)
+				line-height: vw(480, 78px)
+			+r(375)
+				display: none
+
 
 	&__subtitle
 		margin-top: 40px

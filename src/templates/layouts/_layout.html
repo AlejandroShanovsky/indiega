@@ -8,22 +8,25 @@
   <meta name="theme-color" content="#fff"/>
   <meta name="format-detection" content="telephone=no"/>
   <link rel="stylesheet" media="all" href="css/app.css"/>
-
   {# {% include "./_media-tags.html" %} #}
 </head>
 <body>
   {% import "../macros/_icon.html" as mixins %}
 
-  <!-- BEGIN content -->
   {% include "../partials/_header.html" %}
-  {% block content %}
-  {% endblock %}
+  <!-- BEGIN content -->
+  <main class="main">
+    {% block content %}
+    {% endblock %}
+  </main>
   <!-- END content -->
+  {% include "../partials/_footer.html" %}
 
   <!-- BEGIN scripts -->
   {% include "./_scripts.html" %}
   {% block scripts %}
   {% endblock %}
+
   <script type="text/javascript" src="js/app.js"></script>
   <!-- END scripts -->
 

@@ -1,0 +1,35 @@
+<section class="block block--p180 block--bg-dark ">
+	<div class="block__container">
+		<div class="block__head">
+			<div class="block__title" data-backword="Special Plans">Our Pricing Plans</div>
+			<div class="block__subtitle">Pork chop pastrami meatball, picanha salami capicola drumstick tri-tip flank short loin strip steak prosciutto leberkas jowl fatback.</div>
+		</div>
+		<div class="block__content">
+
+			<div class="block__list">
+
+				{% for page in range(1, 4) %}
+				<div class="block__list-item">
+
+					<div class="card-price card-price--{{page}}">
+						<div class="card-price__title">EPIC PLAN</div>
+						<div class="card-price__price">
+							<div class="card-price__price-number">$ <span>99</span>39</div>
+							<div class="card-price__price-text">per month</div>
+						</div>
+						<div class="card-price__list">
+							<div class="card-price__list-item">Doner Boudin Rump Picanha </div>
+							<div class="card-price__list-item">Leberkas Kevin Drumstick</div>
+							<div class="card-price__list-item">Beef Mignon Bresaola</div>
+						</div>
+						<div class="card-price__action btn btn--transparent">Buy Plan Now</div>
+					</div>
+
+				</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+	</div>
+</section>

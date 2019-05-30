@@ -5,14 +5,32 @@
 			{% include "./_logo.html" %}
 		</div>
 
-		<nav class="header__navigation">
-			{% include "./_navigation.html" %}
-		</nav>
+		<div class="header__block">
+			<nav class="header__navigation">
+				{% include "./_navigation.html" %}
+			</nav>
 
-		<div class="header__box">
-			<div class="search">{{mixins.icon('search')}}</div>
-			<a href="#" class="header__action btn btn--bordered-gradient"><span>Join us Now</span></a>
+			<div class="header__box">
+				<div class="search">{{mixins.icon('search')}}</div>
+				<a href="#" class="header__action btn btn--bordered-gradient"><span>Join us Now</span></a>
+			</div>
+		</div>
+
+		<div class="hamburger js-mobile-hamburger">
+			<span class="hamburger__icon"></span>
 		</div>
 
 	</div>
 </header>
+
+<div class="navigation-mobile js-nav-mobile">
+	<div class="hamburger js-mobile-hamburger">
+		<span class="hamburger__icon"></span>
+	</div>
+	<div class="navigation-mobile__block ">
+		{% include "./_logo.html" %}
+		<div class="search">{{mixins.icon('search')}}</div>
+		<nav class="navigation-mobile__navigation">{% include "./_navigation.html" %}</nav>
+		<a href="#" class="navigation-mobile__action btn btn--bordered-gradient"><span>Join us Now</span></a>
+	</div>
+</div>

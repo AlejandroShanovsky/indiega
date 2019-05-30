@@ -1,0 +1,69 @@
+.home-cta
+	width: 100%
+	padding: 100px 15px
+	background-image: $gradient
+
+	&__container
+		width: 100%
+		max-width: 1170px
+		margin: 0 auto
+
+	&__row
+		display: flex
+		align-items: center
+		margin: 0 -30px
+		+r(1024)
+			flex-direction: column
+			align-items: center
+
+	&__col
+		padding: 0 30px
+		width: 100%
+		+r(1024)
+			padding: 20px 30px
+
+	&__title
+		@extend .block__title
+		text-align: left
+		+r(1024)
+			text-align: center
+
+	&__subtitle
+		@extend .block__subtitle
+		margin-top: 10px
+		text-align: left
+		+r(1024)
+			text-align: center
+	&__form
+		position: relative
+
+	&__form-item
+		display: block
+		position: relative
+
+	&__input
+		width: 100%
+		padding: 0 40px
+		background-color: #fff
+		border-radius: 10px
+		color: rgba(30,29,50,1)
+		font-family: $fr
+		font-size: 14px
+		font-style: italic
+		line-height: 60px
+		text-transform: uppercase
+		+placeholder
+			color: rgba(30,29,50,0.5)
+
+	&__action
+		position: absolute
+		right: 40px
+		top: 25px
+		bottom: 25px
+		background-color: $accent
+		svg
+			width: 15px
+			height: 13px
+			fill: $accent
+
+

@@ -3,11 +3,21 @@
 	padding: 90px 100px
 	border-radius: 10px
 	background-color: #292845
+	+r(1200)
+		padding: 40px 20px
+	+r(1000)
+		padding: 0
 
 	&__row
 		display: flex
 		align-items: stretch
 		margin: 0 -45px
+		+r(1200)
+			margin: 0px -15px
+		+r(1000)
+			margin: 0
+			position: relative
+
 
 	&__col
 		padding: 0 45px
@@ -16,16 +26,37 @@
 		width: 100%
 		max-width: 50%
 		position: relative
+		+r(1200)
+			padding: 0 15px
+		+r(1000)
+			padding: 40px 20px
+			max-width: 100%
+
 		&:nth-child(1)
 			max-width: 560px
 			flex-grow: 1
+			+r(1000)
+				max-width: 100%
+				z-index: 1
 		&:nth-child(2)
+			+r(1000)
+				+coverdiv
+				z-index: 0
+
 
 	&__box
 		width: 100%
 		display: flex
 		justify-content: space-between
 		align-items: center
+		+r(480)
+			flex-direction: column-reverse
+			align-items: center
+
+		.rating
+			+r(480)
+				margin-bottom: 30px
+
 
 	&__tag
 		display: flex
@@ -49,6 +80,8 @@
 		font-weight: 700
 		line-height: 14px
 		text-transform: uppercase
+		+r(480)
+			margin-bottom: 30px
 
 	&__title
 		margin-top: 15px
@@ -59,6 +92,8 @@
 		font-weight: 700
 		line-height: 30px
 		text-transform: uppercase
+		+r(480)
+			text-align: center
 
 	&__content
 		margin: 45px 0 60px
@@ -82,6 +117,19 @@
 		border-radius: 10px
 		box-shadow: -5.4px 8.4px 29px rgba(24, 23, 40, 0.2)
 		overflow: hidden
+		+r(1300)
+			right: 0
+			left: 0
+			top: 0
+			bottom: 0
+		+r(1000)
+			&:after
+				content: ""
+				+coverdiv
+				background-color: rgba(0, 0, 0, 0.75)
+		+r(480)
+			display: none
+
 
 	&__img
 		+coverdiv

@@ -1,0 +1,115 @@
+.faq
+	width: 100%
+	display: flex
+	flex-wrap: wrap
+
+	&__item
+		width: 100%
+		max-width: 50%
+		flex: 50%
+		display: flex
+		align-items: flex-start
+		padding: 60px 50px
+		+r(768)
+			margin-bottom: 60px
+			&:last-child
+				margin-bottom: 0
+
+		&:nth-child(even)
+			border-bottom: 1px solid rgba(#c2d4f8, 0.1)
+			padding-right: 0
+			+r(768)
+				flex-direction: column-reverse
+				align-items: center
+				padding: 15px
+				border: none
+
+			.faq__item-title
+				text-align: right
+				+r(768)
+					text-align: center
+
+			.faq__item-subtitle
+				text-align: right
+				+r(768)
+					text-align: center
+
+			.faq__item-counter
+				margin-left: 35px
+				+r(768)
+					margin: 0
+					margin-bottom: 40px
+
+		&:nth-child(odd)
+			flex-direction: row-reverse
+			padding-left: 0
+			border-right: 1px solid rgba(#c2d4f8, 0.1)
+			border-bottom: 1px solid rgba(#c2d4f8, 0.1)
+			+r(768)
+				flex-direction: column-reverse
+				align-items: center
+				padding: 15px
+				border: none
+
+			.faq__item-counter
+				margin-right: 35px
+				+r(768)
+					margin: 0
+					margin-bottom: 40px
+
+		&:last-child, &:nth-last-child(-n+2)
+			border-bottom: none
+
+		+r(1024)
+			max-width: 100%
+			flex: 100%
+
+
+
+
+	&__item-block
+		display: flex
+		flex-direction: column
+
+	&__item-title
+		width: 100%
+		margin-bottom: 20px
+		text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3)
+		color: #fff
+		font-family: $fa
+		font-size: 24px
+		font-weight: 700
+		line-height: 32px
+		text-transform: uppercase
+		+r(768)
+			text-align: center
+
+	&__item-subtitle
+		width: 100%
+		color: #c2d4f8
+		font-family: $fr
+		font-size: 16px
+		font-weight: 300
+		line-height: 26px
+		p
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+
+	&__item-counter
+		width: 100px
+		min-width: 100px
+		height: 100px
+		border-radius: 50%
+		overflow: hidden
+		background-color: #414042
+		background-image: $gradient
+		color: #fff
+		font-family: $fa
+		font-size: 48px
+		font-weight: 700
+		line-height: 100px
+		text-align: center
+		text-transform: uppercase
+		+ls(50)
+
