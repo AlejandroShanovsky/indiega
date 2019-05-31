@@ -1,8 +1,10 @@
+{% import "data/reviews.html" as reviews %}
+
 <section class="block">
 	<div class="block__container">
 
 		<div class="block__head">
-			<div class="block__title" data-backword="all Reviews">Our latest Posts:</div>
+			<div class="block__title" data-backword="all Reviews">Testimonials:</div>
 		</div>
 
 		<div class="block__content">
@@ -10,22 +12,23 @@
 			<div class="slider-arrow slider-arrow--prev js-slider-control-prev"></div>
 
 			<div class="block__slider js-slider-reviews">
-				{% for page in range(0, 6) %}
+				{% for i in reviews.reviews %}
 				<div class="block__list-item">
 
 					<div class="card-review">
 
 						<div class="card-review__img-container">
-							<img src="" alt="" class="card-review__img" />
+							{% if item.title|length %}
+							<img src="./img/users/thumb.jpg" alt="" class="card-review__img" />
+							{% else %}
+							<img src="./img/users/{{ i.avatar }}" alt="" class="card-review__img" />
+							{% endif %}
 						</div>
 
 						<div class="card-review__content">
-
-							<div class="card-review__title">Birdie Stephens</div>
-
-							<div href="#" class="card-review__tag">gamer </div>
-
-							<p class="card-review__text">«Fatback landjaeger prosciutto jerky ham. Salami cappig cupim leberkas. Kevin tenderloin ground round. Spare ribs pork belly cupim.»</p>
+							<div class="card-review__title">{{ i.name }}</div>
+							<div href="#" class="card-review__tag">{{ i.tag }}</div>
+							<p class="card-review__text">«{{ i.content }}»</p>
 						</div>
 
 					</div>
@@ -38,4 +41,6 @@
 			<div class="slider-dots js-slider-dots"></div>
 
 		</div>
-	</section>
+	</div>
+</section>
+

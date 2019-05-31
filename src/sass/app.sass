@@ -14,3 +14,19 @@
 	bottom: 15px
 	transition: none !important
 
+body
+	+scrollbar
+		width: 12px
+
+	+scrollbar-track
+	+scrollbar-thumb
+		background-color: $accent
+		border-radius: 2px
+		+h
+			background-image: $gradient
+			cursor: pointer
+			opacity: 1
+
+	+scrollbar-track-piece
+		background-color: red
+		background-color: $bgd

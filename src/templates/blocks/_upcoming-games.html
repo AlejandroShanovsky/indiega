@@ -1,3 +1,5 @@
+{% import "data/games.html" as games %}
+
 <section class="block js-nav-trigger">
 	<div class="block__container">
 		<div class="block__head">
@@ -13,15 +15,15 @@
 
 					<div class="upcoming-games__top-slider js-slider-upcoming-games">
 
-						{% for page in range(0, 5) %}
+						{% for i in games.games %}
 						<div class="upcoming-games__top-item">
 
 							<div class="card-simple">
 								<div class="card-simple__img-container">
-									<img src="./img/games/gow.jpg" alt="" class="card-simple__img" />
+									<img src="./img/games/{{ i.name }}/avatar.jpg" alt="" class="card-simple__img" />
 								</div>
-								<div class="card-simple__title">GOD OF WAR</div>
-								<div class="card-simple__subtitle">mar 18-20, 2018</div>
+								<div class="card-simple__title">{{ i.name }}</div>
+								<div class="card-simple__subtitle">{{ i.releaseDate }}</div>
 							</div>
 
 						</div>
@@ -36,7 +38,7 @@
 				<div class="upcoming-games__bottom">
 					<div class="upcoming-games__bottom-slider js-slider-upcoming-games-for">
 
-						{% for page in range(0, 5) %}
+						{% for i in games.games %}
 						<div class="upcoming-games__bottom-item">
 
 							<div class="card-full">
@@ -46,25 +48,25 @@
 
 										<div class="card-full__box">
 											<div class="card-full__tag">
-												<a href="#" class="card-full__tag-item">NEW</a>
-												<a href="#" class="card-full__tag-item">GAMES</a>
-												<a href="#" class="card-full__tag-item">ACTION</a>
+												{% for j in i.tags %}
+												<a href="#" class="card-full__tag-item">{{ j.item }}</a>
+												{% endfor %}
 											</div>
-											<div class="card-full__date">mar 18-20, 2018</div>
+											<div class="card-full__date">{{ i.releaseDate }}</div>
 										</div>
 
-										<div class="card-full__title">GOD OF WAR</div>
+										<div class="card-full__title">{{ i.name }}</div>
 
 										<div class="card-full__content">
-											<p>Andouille frankfurter hamburger, swine leberkas tenderloin cupim. Ground round ball tip pastrami, turducken chicken porchetta fatback frankfurter. Pig kielbasa jowl strip. </p>
-
-											<p>Steak sausage pork loin bacon tri-tip meatball shoulder cupim beef pork chop kevin boudin. Short loin pig meatball ham landjaeger pastrami. Drumstick ham hock chuck pork belly chicken prosciutto biltong salami ham pancetta.</p>
+											{% for j in i.description %}
+											<p>{{ j.item }}</p>
+											{% endfor %}
 										</div>
 
 										<div class="card-full__box">
 											<a href="" class="btn"><span>Read more</span></a>
 											<div class="rating">
-												{% for page in range(0, 5) %}
+												{% for page in range(0, i.rating) %}
 												<div class="rating__item">{{mixins.icon('star')}}</div>
 												{% endfor %}
 											</div>
@@ -74,7 +76,7 @@
 
 									<div class="card-full__col">
 										<div class="card-full__img-container">
-											<img src="./img/games/gow.jpg" alt="" class="card-full__img" />
+											<img src="./img/games/{{ i.name }}/avatar.jpg" alt="" class="card-full__img" />
 										</div>
 									</div>
 
