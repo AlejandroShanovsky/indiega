@@ -1,0 +1,140 @@
+.streams
+	display: flex
+	flex-direction: column
+
+	&__top
+		width: 100%
+		display: flex
+		margin-bottom: 1px
+
+	&__top-item
+		width: 100%
+		color: white
+		font-family: Roboto
+		font-size: 14px
+		font-weight: 700
+		line-height: 14px
+		text-transform: uppercase
+		text-align: center
+		line-height: 80px
+		margin-right: 1px
+		box-shadow: inset 0 0 0 2px #292845
+		+tr
+		+h
+			cursor: pointer
+			box-shadow: inset 0 0 0 3px #292845
+
+		&:last-child
+			margin-right: 0
+
+		&.active
+			background-color: #292845
+			pointer-events: none
+			+tr
+			+h
+				cursor: default
+
+	&__bottom
+		position: relative
+		overflow: hidden
+
+	&__bottom-item
+		display: flex
+		position: absolute
+		+tr
+		&:first-child
+			transform: translateX(-200%)
+		&:last-child
+			transform: translateX(200%)
+		&.active
+			position: relative
+			transform: translateX(0)
+
+	&__left
+		width: 100%
+		max-width: 50%
+		min-height: 550px
+		position: relative
+		background-color: #292845
+
+	&__iframe
+		+coverdiv
+
+	&__iframe-overlay
+		+coverdiv
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+		align-items: flex-start
+		padding: 35px
+		&:after
+			content: ""
+			+triangle(19, 21, #9252EA, r)
+			+vcenter
+			+h
+				cursor: pointer
+
+		&:before
+			content: ""
+			+vcenter
+			width: 80px
+			height: 80px
+			background-color: #FFF
+			border-radius: 50%
+			+h
+				cursor: pointer
+
+	&__iframe-title
+		text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3)
+		color: white
+		font-family: "Agency FB"
+		font-size: 32px
+		font-weight: 700
+		line-height: 36px
+		text-transform: uppercase
+
+	&__right
+		width: 100%
+		max-width: 50%
+		min-height: 550px
+		display: flex
+		flex-direction: column
+		background-color: $bgd
+
+	&__title
+		margin-bottom: 40px
+		color: white
+		font-family: "Agency FB"
+		font-size: 24px
+		font-weight: 700
+		line-height: 28px
+		text-transform: uppercase
+		&--nomargin
+			margin-bottom: 0
+
+	&__content
+		flex-grow: 1
+		color: #c2d4f8
+		font-family: Roboto
+		font-size: 16px
+		font-weight: 300
+		line-height: 26px
+
+	&__action
+
+	&__box
+		padding: 50px 60px
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		flex-grow: 1
+		&:last-child
+			flex-grow: 0
+			border-top: 1px solid rgba(255, 255, 255, 0.1)
+
+	&__subtitle
+		color: #c2d4f8
+		font-family: Roboto
+		font-size: 16px
+		font-weight: 300
+		line-height: 26px

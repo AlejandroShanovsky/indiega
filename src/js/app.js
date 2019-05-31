@@ -3,6 +3,7 @@
 //=include functions/sliderUpcomingGames.js
 //=include functions/sliderHero.js
 //=include functions/sliderReviews.js
+//=include functions/tabSwitcher.js
 
 getSVGSprite()
 navigation()
@@ -11,6 +12,7 @@ $(document).ready(function() {
 sliderUpcomingGames()
 sliderHero()
 sliderReviews()
+tabSwitcher()
 $(window).trigger('resize');
 });
 
