@@ -50,7 +50,7 @@ function sliderUpcomingGames() {
 
 	let slidesmustShow = 3;
 
-	if(thisSlider.length) {
+	if(thisSlider.length && thisSlider.not('.slick-initialized')) {
 
 		thisSlider.slick({
 			dots: false,
@@ -63,17 +63,20 @@ function sliderUpcomingGames() {
 			focusOnSelect: true,
 			centerMode: true,
 			swipe: false,
-			autoplay: false,
-			edgeFriction: false,
+			autoplay: true,
+			autoplaySpeed: 5000,
 			pauseOnFocus: true,
 			prevArrow: thisSlider.parent().find('.js-slider-control-prev'),
 			nextArrow: thisSlider.parent().find('.js-slider-control-next'),
 			asNavFor: thisSliderFor,
 			responsive: [
 			{
-				breakpoint: 481,
+				breakpoint: 768,
 				settings: {
+					swipe: true,
+            		initialSlide: 1,
 					slidesToShow: 1,
+					centerMode: false,
 				}
 			}
 			]
@@ -96,6 +99,14 @@ function sliderUpcomingGames() {
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			asNavFor: thisSlider,
+			responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+            		initialSlide: 1,
+				}
+			}
+			]
 		});
 
 	} else {
@@ -109,7 +120,7 @@ function sliderUpcomingGames() {
 function sliderHero() {
 
 	let thisSlider = $('.js-slider-hero');
-	let thisSliderFor = $('.js-slider-hero-for');
+	let thisSliderDots = $('.js-slider-hero-dots');
 
 	let slidesmustShow = 1;
 
@@ -118,7 +129,12 @@ function sliderHero() {
 	if(thisSlider.length) {
 
 		thisSlider.slick({
-			dots: false,
+			dots: true,
+			customPaging: function(slider, i) {
+				i += 1;
+				return '<div>0' + i + '</div>';
+			},
+			appendDots: thisSliderDots,
 			infinite: false,
 			speed: 300,
 			arrows: false,
@@ -128,30 +144,8 @@ function sliderHero() {
 			autoplay: true,
 			pauseOnFocus: true,
 			autoplaySpeed: 5000,
-            swipe: false,
-			prevArrow: thisSlider.parent().find('.js-slider-control-prev'),
-			nextArrow: thisSlider.parent().find('.js-slider-control-next'),
-			asNavFor: thisSliderFor,
+			swipe: false,
 		});
-
-		thisSliderFor.slick({
-			dots: false,
-			arrows: false,
-			infinite: false,
-			centerMode: true,
-			edgeFriction: false,
-			vertical: true,
-			focusOnSelect: true,
-			speed: 300,
-			rows: 0,
-			slidesToShow: 3,
-			slidesPerRow: 1,
-			slidesToScroll: 1,
-			asNavFor: thisSlider,
-		});
-
-	} else {
-		thisSliderArrows.css('display', 'none');
 
 	}
 }
@@ -182,9 +176,10 @@ function sliderReviews() {
 			nextArrow: thisSlider.parent().find('.js-slider-control-next'),
 			responsive: [
 			{
-				breakpoint: 481,
+				breakpoint: 769,
 				settings: {
 					slidesToShow: 1,
+					slidesToScroll: 1,
 				}
 			}
 			]
@@ -196,10 +191,46 @@ function sliderReviews() {
 
 
 getSVGSprite()
-btnToTop($('.btnTO'),'5000')
+navigation()
+
+$(document).ready(function() {
 sliderUpcomingGames()
 sliderHero()
 sliderReviews()
+$(window).trigger('resize');
+});
 
+btnToTop($('.btnTO'),'5000')
 
+function navigation(){
+	let element = $('.js-header');
+	let fixedTrigger = $('.js-nav-trigger');
 
+	if (fixedTrigger.length) {
+		var scroll = $(window).scrollTop();
+		var objectPosition = fixedTrigger.offset().top;
+		var elementHeight = element.height();
+		console.log(elementHeight);
+		if (scroll > objectPosition) {
+			element.addClass("fixed");
+		} else {
+			element.removeClass("fixed");
+		}
+	}
+
+	$(window).scroll(function() {
+		var scroll = $(window).scrollTop();
+		if (scroll > objectPosition) {
+			element.addClass("fixed");
+		} else {
+			element.removeClass("fixed");
+		}
+	});
+
+}
+
+$('.hamburger').on('click', function(e) {
+	e.preventDefault();
+	$('.hamburger').toggleClass('active');
+	$('.js-nav-mobile').toggleClass('active');
+});

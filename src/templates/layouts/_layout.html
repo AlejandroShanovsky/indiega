@@ -13,14 +13,14 @@
 <body>
   {% import "../macros/_icon.html" as mixins %}
 
-  {% include "../partials/_header.html" %}
+  {% include "../blocks/_header.html" %}
   <!-- BEGIN content -->
   <main class="main">
     {% block content %}
     {% endblock %}
   </main>
   <!-- END content -->
-  {% include "../partials/_footer.html" %}
+  {% include "../blocks/_footer.html" %}
 
   <!-- BEGIN scripts -->
   {% include "./_scripts.html" %}

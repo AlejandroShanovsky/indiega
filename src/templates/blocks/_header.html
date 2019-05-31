@@ -2,12 +2,12 @@
 	<div class="header__container">
 
 		<div class="header__logo">
-			{% include "./_logo.html" %}
+			{% include "../partials/_logo.html" %}
 		</div>
 
 		<div class="header__block">
 			<nav class="header__navigation">
-				{% include "./_navigation.html" %}
+				{% include "../partials/_navigation.html" %}
 			</nav>
 
 			<div class="header__box">
@@ -28,9 +28,9 @@
 		<span class="hamburger__icon"></span>
 	</div>
 	<div class="navigation-mobile__block ">
-		{% include "./_logo.html" %}
+		{% include "../partials/_logo.html" %}
 		<div class="search">{{mixins.icon('search')}}</div>
-		<nav class="navigation-mobile__navigation">{% include "./_navigation.html" %}</nav>
+		<nav class="navigation-mobile__navigation">{% include "../partials/_navigation.html" %}</nav>
 		<a href="#" class="navigation-mobile__action btn btn--bordered-gradient"><span>Join us Now</span></a>
 	</div>
 </div>
