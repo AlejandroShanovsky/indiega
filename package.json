@@ -63,7 +63,7 @@
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-babel": "^6.1.2",
     "require-yaml": "^0.0.1",
-    "lodash": "^4.3.0"
+    "lodash": "^4.17.21"
   },
   "dependencies": {
     "gulp-replace": "^1.0.0",
